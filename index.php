@@ -13,7 +13,7 @@
 <!-- Slider -->
     <div class="slider">
         <div class="slides">
-            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio1" checked>
             <input type="radio" name="radio-btn" id="radio2">
             <input type="radio" name="radio-btn" id="radio3">
             <input type="radio" name="radio-btn" id="radio4">
@@ -31,13 +31,12 @@
             </div>
         </div>
     </div>
-
 <!-- Slider -->
+
 <!-- Title -->
 <div class="TitleIndex">Corretor Name</div>
 <!-- Title -->
 
-<!--show featured post if there's any-->
 <?php if(mysqli_num_rows($featured_result)==1):?>
     <section class="featured"> 
     <div class="container featured__container">
@@ -55,11 +54,15 @@
                 $category = mysqli_fetch_assoc($category_result);
                 mysqli_stmt_close($category_stmt);
                 ?>
+                
                 <a href="<?= ROOT_URL ?>category-posts.php?id=<?= $featured['category_id'] ?>" class="category__button"><?= $category['title'] ?></a>
+                
                 <h2 class="post__title"><a href="<?= ROOT_URL ?>post.php?id=<?= $featured['id'] ?>"><?= $featured['title'] ?></a></h2>
+                
                 <p class="post__body">
                     <?= substr($featured['descriptionone'], 0, 300) ?>...
                 </p>
+                
                 <div class="post__author">
                     <?php
                     $author_id = $featured['author_id'];
@@ -99,11 +102,11 @@
 <!--Section-->
 
 <!--Posts-->
-    <section class="posts <?=$featured ? '' : 'section__extra-margin'?>">
+    <section class="posts">
         <div class="container posts__container">
          <?php while($post = mysqli_fetch_assoc($posts)):?>
             <article class="post">
-                <div class="post__thumbnail">
+                <div class="post__thumbnail2">
                     <img src="./images/<?=$post['thumbnail']?>" alt="Image">
                 </div>
                 <div class="post__info">

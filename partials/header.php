@@ -1,13 +1,13 @@
-    <?php 
-        require 'config/database.php';
-        //fetch current use from database
-        if(isset($_SESSION['user-id'])) {
-            $id = filter_var($_SESSION['user-id'], FILTER_SANITIZE_NUMBER_INT);
-            $query = "SELECT avatar FROM users WHERE id=$id";
-            $result = mysqli_query($connection, $query);
-            $avatar = mysqli_fetch_assoc($result);
-        }
-    ?>
+<?php 
+    require 'config/database.php';
+    //fetch current use from database
+    if(isset($_SESSION['user-id'])) {
+        $id = filter_var($_SESSION['user-id'], FILTER_SANITIZE_NUMBER_INT);
+        $query = "SELECT avatar FROM users WHERE id=$id";
+        $result = mysqli_query($connection, $query);
+        $avatar = mysqli_fetch_assoc($result);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,8 +27,8 @@
         <div class="container nav__container">
             <a href="<?=ROOT_URL?>" class="nav__logo">Corretor Name</a> 
             <ul class="nav__items">
-                <li><a href="<?=ROOT_URL?>blog.php">Blog</a></li>
-                <li><a href="<?=ROOT_URL?>contact.php">Contact</a></li>
+                <li><a href="<?=ROOT_URL?>blog.php">Catálogo</a></li>
+                <li><a href="<?=ROOT_URL?>contact.php">Contacts</a></li>
                 <?php if(isset($_SESSION['user-id'])): ?>
                     <li class="nav__profile">
                         <div class="avatar">

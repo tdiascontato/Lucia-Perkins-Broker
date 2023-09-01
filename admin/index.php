@@ -57,7 +57,7 @@ $posts = mysqli_query($connection, $query);
             </ul> 
         </aside>
         <main>
-            <h2>Manage Posts</h2>
+            <h2 class="white">Manage Posts</h2>
             <?php if(mysqli_num_rows($posts)>0):?>
             <table>
                 <thead>

@@ -1,44 +1,25 @@
 <!--Footer-->
 <footer>
     <div class="footer__socials">
-        <a href="https://youtube.com" target="_blank"><i class="uil uil-youtube"></i></a>
         <a href="https://facebook.com/aulascomtiago" target="_blank"><i class="uil uil-facebook"></i></a>
         <a href="https://instagram.com/finefellings" target="_blank"><i class="uil uil-instagram"></i></a>
-        <a href="https://linkedin.com/ln/tdiascontato" target="_blank"><i class="uil uil-linkedin"></i></a>
-        <a href="https://twitter.com" target="_blank"><i class="uil uil-twitter"></i></a>
+        <a href="" target="_blank"><i class="uil uil-whatsapp"></i></a>
     </div>
+
     <div class="container footer__container">
-        
         <article>
-            <h4>Support</h4>
-            <ul>
-                <li><a href="">Support One</a></li>
-                <li><a href="">Support Two</a></li>
-            </ul>
+            <a href="<?=ROOT_URL?>"><h4 class="footer_menu">Home</h4></a>
         </article>
-
         <article>
-            <h4>Blog</h4>
-            <ul>
-                <li><a href="">Safety</a></li>
-                <li><a href="">Categories</a></li>
-            </ul>
+            <a href="<?=ROOT_URL?>blog.php"><h4 class="footer_menu">Blog</h4></a>
         </article>
-
-
         <article>
-            <h4>Permalinks</h4>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Blog</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
+            <a href="<?=ROOT_URL?>contact.php"><h4 class="footer_menu">Contacts</h4></a>
         </article>
-
     </div>
 
     <div class="footer__copyright">
-        <small>Copyright &copy; Tiago Dias</small>
+        <small>Copyright &copy; @finefellings</small>
     </div>
 </footer>
 <!--Footer-->

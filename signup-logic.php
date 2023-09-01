@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
     }else{//check passwords
         if($createpassword !== $confirmpassword){
             $_SESSION['signup'] = 'Passwords do not match';
-        }else{
+        }else{ 
             $hashed_password = password_hash($createpassword, PASSWORD_DEFAULT);
 
             //Cheking existions

@@ -21,30 +21,28 @@
 <!--NAvBAr-->
 <nav>
         <div class="container nav__container">
-            <a href="<?=ROOT_URL?>" class="nav__logo">Fofoca</a>
+            <a href="<?=ROOT_URL?>" class="nav__logo">Corretor Name</a> 
             <ul class="nav__items">
-                <li><a href="<?=ROOT_URL?>blog.php">Blog</a></li>
-                <li><a href="<?=ROOT_URL?>about.php">About</a></li>
-                <li><a href="<?=ROOT_URL?>services.php">Services</a></li>
-                <li><a href="<?=ROOT_URL?>contact.php">Contact</a></li>
+                <li><a href="<?=ROOT_URL?>blog.php">Catálogo</a></li>
+                <li><a href="<?=ROOT_URL?>contact.php">Contacts</a></li>
                 <?php if(isset($_SESSION['user-id'])): ?>
-                        <li class="nav__profile">
-                            <div class="avatar">
-                                <img src="<?= ROOT_URL . 'images/' . $avatar['avatar'] ?>" alt="User" />
-                            </div>
-                            <ul>
-                                <li><a href="<?=ROOT_URL?>admin/">Dashboard</a></li>
-                                <li><a href="<?=ROOT_URL?>logout.php">Logout</a></li>
-                            </ul>
-                        </li>
-                    <?php else: ?>
-                    <li><a href="<?=ROOT_URL?>signin.php">Signin</a></li>
-                    <?php endif ?>
+                    <li class="nav__profile">
+                        <div class="avatar">
+                            <img src="<?= ROOT_URL . 'images/' . $avatar['avatar'] ?>" alt="User" />
+                        </div>
+                         <ul>
+                            <li><a href="<?= ROOT_URL ?>admin/">Dashboard</a></li>
+                            <li><a href="<?= ROOT_URL ?>logout.php">Logout</a></li>
+                        </ul>
+                    </li>
+                <?php else: ?>
+                <li><a href="<?=ROOT_URL?>signin.php">Signin</a></li>
+                <?php endif ?>
             </ul>
             <button id="open__nav-btn"><i class="uil uil-bars"></i></button>
             <button id="close__nav-btn"><i class="uil uil-multiply"></i></button>
             </div>
-</nav>
+    </nav>
 <!--NAvBar-->
 <section class="form__section">
     <div class="container form__section-container">

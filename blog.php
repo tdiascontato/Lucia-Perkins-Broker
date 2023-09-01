@@ -19,7 +19,7 @@
 <!--Section-->
 
 <!--Posts-->
-<section class="posts <?=$featured ? '' : 'section__extra-margin'?>">
+<section class="posts">
         <div class="container posts__container">
          <?php while($post = mysqli_fetch_assoc($posts)):?>
             <article class="post">
