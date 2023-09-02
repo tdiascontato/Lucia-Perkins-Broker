@@ -28,36 +28,20 @@ const hideSidebar = () =>{
     hideSidebarBtn.style.display = 'none';
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    let count = 1;
-    let goingBack = false;
-    setInterval(function () {
-        nextImage();
-    }, 7000);
-    function nextImage() {
-        if (!goingBack) {
-            count++;
-            if (count > 4) {
-                count = 1;
-            }
-        } else {
-            count--;
-            if (count < 1) {
-                count = 4;
-            }
-        }
-        let radioElement = document.getElementById("radio" + count);
-        if (radioElement) {
-            radioElement.checked = true;
-        }
-        if (count === 4) {
-            goingBack = true;
-        } else if (count === 1) {
-            goingBack = false;
-        }
+document.addEventListener("DOMContentLoaded", function () {
+    const slidesContainer = document.querySelector(".slides");
+    const slides = slidesContainer.querySelectorAll(".slide");
+    let slideIndex = 0;
+    const slideWidth = slides[0].clientWidth;
+    function nextSlide() {
+        slideIndex = (slideIndex + 1) % slides.length;
+        showSlide();
     }
+    function showSlide() {
+        slidesContainer.style.transform = `translateX(-${slideWidth * slideIndex}px)`;
+    }
+    setInterval(nextSlide, 4000); // Troque o valor para ajustar a velocidade do slider
 });
-
 openNavBtn.addEventListener('click', openNav);
 closeNavBtn.addEventListener('click', closeNav);
 showSidebarBtn.addEventListener('click', showSidebar);

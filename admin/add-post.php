@@ -26,7 +26,7 @@ unset($_SESSION['add-post-add']);
                 unset($_SESSION['add-post'])?>
             </p>
         </div> 
-<?php endif ?> 
+        <?php endif ?> 
         <form action="<?=ROOT_URL?>admin/add-post-logic.php" enctype="multipart/form-data" method="POST">
             <input type="text" name="title" value="<?=$title?>" placeholder="Title">
             

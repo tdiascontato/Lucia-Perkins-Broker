@@ -11,10 +11,10 @@
                 <?=$_SESSION['add-slide'];
                 unset($_SESSION['add-slide'])?>
             </p>
-        </div>
+        </div> 
         <?php endif ?>
-        <form action="<?=ROOT_URL?>admin/add-slide-logic.php" method="POST">
-            <input type="file"  name="slide" id="slide">
+        <form action="<?=ROOT_URL?>admin/add-slide-logic.php" method="POST" enctype="multipart/form-data">
+            <input type="file"  name="thumbnail_slider" id="thumbnail_slider">
             <button type="submit" name="submit" class="btn">Add slide</button>
             
         </form>

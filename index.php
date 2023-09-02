@@ -1,36 +1,36 @@
 <?php
- include 'partials/header.php';
- //fetch featured post from db
- $featured_query = "SELECT * FROM posts WHERE is_featured=1";
- $featured_result = mysqli_query($connection, $featured_query);
- $featured = mysqli_fetch_assoc($featured_result);
- //fetch 9posts from posts table
- $query = "SELECT * FROM posts ORDER BY date_time DESC LIMIT 9";
+include 'partials/header.php';
+$featured_query = "SELECT * FROM posts WHERE is_featured=1";
+$query_two = "SELECT thumbnail_slider FROM slider";
+$query = "SELECT * FROM posts ORDER BY date_time DESC LIMIT 9";
+$featured_result = mysqli_query($connection, $featured_query);
+$featured = mysqli_fetch_assoc($featured_result);
+$result_two = mysqli_query($connection, $query_two);
  $posts = mysqli_query($connection, $query);
 ?>
 
 <!--Section-->
 <!-- Slider -->
-    <div class="slider">
-        <div class="slides">
-            <input type="radio" name="radio-btn" id="radio1" checked>
-            <input type="radio" name="radio-btn" id="radio2">
-            <input type="radio" name="radio-btn" id="radio3">
-            <input type="radio" name="radio-btn" id="radio4">
-            <div class="slide first">
-                <img src="./images/imgone.png" alt="Imagem FIRST">
-            </div>
-            <div class="slide">
-                <img src="./images/imgtwo.png" alt="Imagem">
-            </div>
-            <div class="slide">
-                <img src="./images/imgthree.png" alt="Imagem">
-            </div>
-            <div class="slide">
-                <img src="./images/imgfour.png" alt="Imagem">
-            </div>
-        </div>
+<div class="slider">
+    <div class="slides">
+        <?php if ($result_two) :
+            if (mysqli_num_rows($result_two) > 0) :
+                while ($row = mysqli_fetch_assoc($result_two)): 
+                    $thumbnail_slider = $row['thumbnail_slider'];?>
+                    <div class="slide">
+                        <img src="<?=ROOT_URL?>img_slider/<?=$thumbnail_slider?>" alt="Slide Image">
+                    </div>
+                <?php endwhile ?>
+            <?php else: ?>
+                <p> Nenhuma imagem encontrada. </p>
+            <?php endif ?>
+            <?php mysqli_free_result($result_two) ?>
+            <?php else: ?>
+            <p>Erro na consulta: <?php mysqli_error($connection)?></p>
+        <?php endif ?>
     </div>
+</div>
+
 <!-- Slider -->
 
 <!-- Title -->

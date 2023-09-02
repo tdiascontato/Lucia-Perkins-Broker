@@ -333,6 +333,7 @@ footer{
     align-items: center;
     color: white;
     cursor: pointer;
+    gap: 10%;
 }
 .footer_menu{
     font-weight: bold;
@@ -569,6 +570,7 @@ footer{
     display: grid;
     place-items: center;
     height: 100vh;
+    margin-top: 6rem;
 }
 .form__section form button{
     color: white;
@@ -699,36 +701,40 @@ input, textarea, select{
     border-radius: 5px;
 }
 .slides{ 
-    width: 400%;
+    width: max-content;
     height: 100%;
     display: flex;
+    transition: 2s;
 }
 .slides input {
     display: none;
 }
 .slide{
-    width: 25%;
+    width: 75%;
     position: relative;
     transition: 3s ease;
 }
 .slide img{
-    width: 100%;
+    width: 100vw;
     height: 100%;
     object-fit: cover;
 }
-#radio1:checked ~ .first{ 
-    margin-left: 0;
-}
-#radio2:checked ~ .first{ 
-    margin-left: -25%;
-}
-#radio3:checked ~ .first{ 
-    margin-left: -50%;
-}
-#radio4:checked ~ .first{
-    margin-left: -75%;
-}
 
+.add_slides{
+    display: flex;
+    height: 50px;
+    background-color: #1B2727;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    transition: 1s ease;
+}
+.add_slides:hover{
+    transition:  1s ease;
+    background-color: black;
+    color: var(--color-orange-500);
+}
 /*Medias Queries*/
 @media(max-width: 1024px){
     

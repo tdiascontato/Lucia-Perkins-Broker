@@ -7,7 +7,7 @@
 
 
 <section class="dashboard">
-    <?php if(isset($_SESSION['add-user-success'])):?> <!--Show if add user was successful-->
+<?php if(isset($_SESSION['add-user-success'])):?> <!--Show if add user was successful-->
     <div class="alert__message success container">
         <p>
         <?= $_SESSION['add-user-success'];
@@ -15,7 +15,7 @@
         ?>
         </p>
     </div>
-    <?php elseif(isset($_SESSION['edit-user-success'])):?> <!--Show if edit user was successful-->
+<?php elseif(isset($_SESSION['edit-user-success'])):?> <!--Show if edit user was successful-->
     <div class="alert__message success container">
         <p>
         <?= $_SESSION['edit-user-success'];
@@ -23,15 +23,7 @@
         ?>
         </p>
     </div>
-    <?php elseif(isset($_SESSION['delete-user-success'])):?> <!--Show if delete user was successful-->
-    <div class="alert__message success container">
-        <p>
-        <?= $_SESSION['delete-user-success'];
-        unset($_SESSION['delete-user-success']);
-        ?>
-        </p>
-    </div>
-    <?php elseif(isset($_SESSION['edit-user'])):?> <!--Show if edit user was NOT successful-->
+<?php elseif(isset($_SESSION['edit-user'])):?> <!--Show if edit user was NOT successful-->
     <div class="alert__message error container">
         <p>
         <?= $_SESSION['edit-user'];
@@ -39,7 +31,41 @@
         ?>
         </p>
     </div>
-    <?php elseif(isset($_SESSION['delete-user'])):?> <!--Show if delete user was NOT successful-->
+<?php elseif(isset($_SESSION['delete-user-success'])):?> <!--Show if delete user was successful-->
+    <div class="alert__message success container">
+        <p>
+        <?= $_SESSION['delete-user-success'];
+        unset($_SESSION['delete-user-success']);
+        ?>
+        </p>
+    </div>
+<?php elseif(isset($_SESSION['edit-post'])):?> <!--Show if add post was NOT successful-->
+    <div class="alert__message error container">
+        <p>
+        <?= $_SESSION['edit-post'];
+        unset($_SESSION['edit-post']);
+        ?>
+        </p>
+    </div>
+<?php elseif(isset($_SESSION['add-slide-success'])):?> <!--Show if add slide was successful-->
+    <div class="alert__message success container">
+        <p>
+        <?= $_SESSION['add-slide-success'];
+        unset($_SESSION['add-slide-success']);
+        ?>
+        </p>
+    </div>
+
+ <?php elseif(isset($_SESSION['delete-slide'])):?> <!--Show if delete slide was NOT successful-->
+    <div class="alert__message error container">
+        <p>
+        <?= $_SESSION['delete-slide'];
+        unset($_SESSION['delete-slide']);
+        ?>
+        </p>
+    </div>
+
+<?php elseif(isset($_SESSION['delete-user'])):?> <!--Show if delete user was NOT successful-->
     <div class="alert__message error container">
         <p>
         <?= $_SESSION['delete-user'];
@@ -47,12 +73,13 @@
         ?>
         </p>
     </div>
-    <?php endif ?>
+    <?php endif ?> 
     <div class="container dashboard__container">
         <button id="show__sidebar-btn" class="sidebar__toggle"><i class="uil uil-angle-right-b"></i></button>
         <button id="hide__sidebar-btn" class="sidebar__toggle"><i class="uil uil-angle-left-b"></i></button>
         <aside>
             <ul>
+            <li><a href="manage-slide.php"><i class="uil uil-image-edit"></i><h5>Manage Slide</h5></a></li>
                 <li><a href="add-post.php"><i class="uil uil-pen"></i><h5>Add post</h5></a></li>
                 <li><a href="index.php"><i class="uil uil-postcard"></i><h5>Manage posts</h5></a></li>
                 <?php if(isset($_SESSION['user_is_admin'])): ?>
@@ -64,7 +91,7 @@
             </ul> 
         </aside>
         <main>
-            <h2>Manage users</h2>
+            <h2 class="white">Manage users</h2>
             <?php if(mysqli_num_rows($users)>0): ?>
                 <table>
                     <thead>
