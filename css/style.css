@@ -402,7 +402,7 @@ footer{
     color: white;
 }
 .btn.danger{
-    background: var(--color-red);
+    background: #980b0b;
 }
 .btn:hover{
     background: white;
@@ -424,7 +424,100 @@ footer{
     height: 70vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
+}
+.card_vantagens{
+    height: 100%;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    transition: transform 1s ease;
+    box-shadow: 0 0 10px rgb(144, 152, 149);
+    position: relative;
+    color: black;
+}
+.card_vantagens:hover{
+    transform: scale(0.95);
+    color: #fff;
+}
+.card_vantagens h2{
+    position: absolute;
+    z-index: 1;
+    top: 2%;
+    left: 0;
+    right: 0;
+    border-radius: 10px;
+    padding: 10px;
     text-align: center;
+    font-size: xx-large;
+    font-weight: 700;
+    transition: opacity 0.3s ease;
+    transition: 1s ease;
+    cursor: default;
+    -webkit-text-stroke: 0.01px black;
+}
+.card_vantagens h2:hover{
+    transition: 1s ease;
+}
+.card_vantagens img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(50%); 
+    transition: filter 0.3s ease; 
+    z-index: 0; 
+}
+.card_vantagens:hover img {
+    filter: grayscale(0%); /* A imagem fica colorida no hover */
+}
+.novo_usado{
+    width: 100%;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+}
+.card_novo_usado{
+    height: 100%;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    transition: transform 1s ease;
+    box-shadow: 0 0 10px rgb(144, 152, 149);
+    position: relative;
+    color: black;
+}
+.card_novo_usado:hover{
+    transform: scale(0.95);
+    color: #fff;
+}
+.card_novo_usado h2{
+    position: absolute;
+    z-index: 1;
+    top:2%;
+    left: 0;
+    right: 0;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 700;
+    transition: opacity 0.3s ease;
+    transition: 1s ease;
+    cursor: default;
+    -webkit-text-stroke: 0.01px black;
+}
+.card_novo_usado h2:hover{
+    transition: 1s ease;
+}
+.card_novo_usado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(50%); 
+    transition: filter 0.3s ease; 
+    z-index: 0; 
+}
+.card_novo_usado:hover img {
+    filter: grayscale(0%);
 }
 .section_contact{
     background-color: #11362a;
@@ -438,17 +531,55 @@ footer{
     text-align: center;
     overflow: hidden;
 }
-.imoveis{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 70vh;
-    text-align: center;
-}
 .imoveis_condicao{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     height: 70vh;
     text-align: center;
+    position: relative;
+}
+.card_imoveis_condicao{
+    height: 100%;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    transition: transform 1s ease;
+    box-shadow: 0 0 10px rgb(144, 152, 149);
+    position: relative;
+    color: black;
+}
+.card_imoveis_condicao:hover{
+    transform: scale(0.95);
+    color: #fff;
+}
+.card_imoveis_condicao h2{
+    position: absolute;
+    z-index: 1;
+    top:2%;
+    left: 0;
+    right: 0;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 700;
+    transition: opacity 0.3s ease;
+    transition: 1s ease;
+    cursor: default;
+    -webkit-text-stroke: 0.01px black;
+}
+.card_imoveis_condicao h2:hover{
+    transition: 1s ease;
+}
+.card_imoveis_condicao img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(50%); 
+    transition: filter 0.3s ease; 
+    z-index: 0; 
+}
+.card_imoveis_condicao:hover img {
+    filter: grayscale(0%);
 }
 .contact_icons{
     display: grid;
@@ -892,7 +1023,14 @@ input, textarea, select{
     .slider{
         height: 400px;
     }
-    /**************************Slider************************************/
+    /**************************LandingPage************************************/
+    .card_vantagens img{
+        filter: grayscale(0%); 
+    }
+    .card_vantagens h2{
+        top:30%;
+        font-size: large;
+    }
 }
 
 @media(max-width: 600px){

@@ -4,9 +4,18 @@
 <section class="landing_page">
 
 <div class="vantagens">
-    <div class="white" id="backblack">Consultas</div>
-    <div class="black" id="backwhite">Simulação de financiamentos</div>
-    <div class="white" id="backblack">Visitas</div>
+    <div class="card_vantagens">
+        <h2>Consultas e Aconselhamentos</h2>
+        <img src="<?= ROOT_URL ?>img/consulta.jpeg" alt="Consultas">
+    </div>
+    <div class="card_vantagens">
+        <h2>Simulações de Financiamentos e Mentoria</h2>
+        <img src="<?= ROOT_URL ?>img/financiamento.jpeg" alt="Simulacao de Financiamento">
+    </div>
+    <div class="card_vantagens">
+        <h2>Visitas</h2>
+        <img src="<?= ROOT_URL ?>img/visita.jpeg" alt="Visitas">
+    </div>
 </div>
 
 <!--Contact_section-->
@@ -25,18 +34,32 @@
 <!--Contact_Section-->
 
 <!-- Imóveis Novo Usado -->
-<div class="title">Trabalhamos com imóveis:</div>
-<div class="imoveis">
-    <div class="imoveis_opcoes black" id="backwhite">PRONTOS</div>
-    <div class="imoveis_opcoes white" id="backblack">LANÇAMENTOS</div>
+<div class="novo_usado">
+    <div class="card_novo_usado">
+        <h2>Imóveis Prontos</h2>
+        <img src="<?= ROOT_URL ?>img/pronto.jpeg" alt="Consultas">
+    </div>
+    <div class="card_novo_usado">
+        <h2>Imóveis Lançamentos</h2>
+        <img src="<?= ROOT_URL ?>img/lancamento.png" alt="Simulacao de Financiamento">
+    </div>
 </div>
 <!-- Imóveis -->
 
 <!-- Imóveis Casa Apart Rural-->
 <div class="imoveis_condicao">
-    <div class="imoveis_cond black" id="backwhite">CASAS</div>
-    <div class="imoveis_cond white" id="backblack">APARTAMENTOS</div>
-    <div class="imoveis_cond black" id="backwhite">RURAL</div>
+    <div class="card_imoveis_condicao">
+        <h2>Casas</h2>
+        <img src="<?= ROOT_URL ?>img/casa.jpeg" alt="Consultas">
+    </div>
+    <div class="card_imoveis_condicao">
+        <h2>Apartamento</h2>
+        <img src="<?= ROOT_URL ?>img/apartamento.jpeg" alt="Simulacao de Financiamento">
+    </div>
+    <div class="card_imoveis_condicao">
+        <h2>Rural</h2>
+        <img src="<?= ROOT_URL ?>img/rural.jpeg" alt="Simulacao de Financiamento">
+    </div>
 </div>
 <!-- Imóveis -->
 
