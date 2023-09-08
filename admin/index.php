@@ -1,5 +1,5 @@
-<?php 
-include './partials/header.php'; 
+<?php
+include 'partials/header.php'; 
 //fetch current user's posts from database
 $current_user_id = $_SESSION['user-id'];
 $query = "SELECT id, title, category_id FROM posts WHERE author_id=$current_user_id ORDER BY id DESC";
@@ -74,7 +74,7 @@ $posts = mysqli_query($connection, $query);
             </ul> 
         </aside>
         <main>
-            <h2 class="white">Manage Posts</h2> 
+            <h2 class="dashboard_title">Manage Posts</h2> 
             <?php if(mysqli_num_rows($posts)>0):?>
             <table>
                 <thead>
