@@ -1,7 +1,8 @@
 <?php
+session_start();
 require 'config/database.php';
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $author_id = $_SESSION['user-id'];
     $title = filter_var($_POST['title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $rooms = filter_var($_POST['rooms'], FILTER_SANITIZE_NUMBER_INT);
@@ -11,17 +12,22 @@ if(isset($_POST['submit'])){
     $body = filter_var($_POST['body'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_INT);
     $category_id = filter_var($_POST['category'], FILTER_SANITIZE_NUMBER_INT);
-    $is_featured = filter_var($_POST['is_featured'], FILTER_SANITIZE_NUMBER_INT);
+    $is_featured = isset($_POST['is_featured']) ? filter_var($_POST['is_featured'], FILTER_SANITIZE_NUMBER_INT) : 0;
     $thumbnail = $_FILES['thumbnail'];
     $thumbnail_second = $_FILES['thumbnail_second'];
-    //set is_featured to 0 if unchecked
-    $is_featured = $is_featured == 1 ?: 0;
-    //validate form data
-    if (!$title || !$rooms || !$baths || !$descriptionone || !$descriptiontwo || !$body || !$price || !$category_id || !$thumbnail['name'] || !$thumbnail_second['name']) {
+
+    // Set is_featured to 0 if unchecked
+    $is_featured = $is_featured == 1 ? 0 : 1;
+
+    // Validate form data
+    if (
+        !$title || !$rooms || !$baths || !$descriptionone || !$descriptiontwo ||
+        !$body || !$price || !$category_id || !$thumbnail['name'] || !$thumbnail_second['name']
+    ) {
         $_SESSION['add-post'] = "Please fill in all the required fields";
     } else {
         // Thumbnail processing
-        $thumbnail_time = time(); 
+        $thumbnail_time = time();
         $thumbnail_name = $thumbnail_time . $thumbnail['name'];
         $thumbnail_tmp_name = $thumbnail['tmp_name'];
         $thumbnail_destination_path = '../images/' . $thumbnail_name;
@@ -46,21 +52,22 @@ if(isset($_POST['submit'])){
             $_SESSION['add-post'] = "Thumbnails must be in PNG, JPG, or JPEG format";
         }
     }
-    //redirect back (with form data) to add post page if there is any problem
-    if(isset($_SESSION['add-post'])){
+
+    // Redirect back (with form data) to add post page if there is any problem
+    if (isset($_SESSION['add-post'])) {
         $_SESSION['add-post-data'] = $_POST;
         header('location:' . ROOT_URL . 'admin/add-post.php');
         die();
-    }else{
-        //set is_featured of all posts to 0 if is_featured for this post is 1
-        if($is_featured == 1){
+    } else {
+        // Set is_featured of all posts to 0 if is_featured for this post is 1
+        if ($is_featured == 1) {
             $zero_all_is_featured_query = "UPDATE posts SET is_featured=0";
             $zero_all_is_featured_query = mysqli_query($connection, $zero_all_is_featured_query);
         }
         $query =  "INSERT INTO posts (title, rooms, baths, descriptionone, descriptiontwo, body, price, thumbnail, thumbnail_second, category_id, author_id, is_featured) VALUES ('$title', '$rooms', '$baths', '$descriptionone', '$descriptiontwo', '$body', '$price', '$thumbnail_name', '$thumbnail_second_name', '$category_id', '$author_id', '$is_featured')";
         $result = mysqli_query($connection, $query);
 
-        if(!mysqli_errno($connection)){
+        if (!mysqli_errno($connection)) {
             $_SESSION['add-post-success'] = "New post added successfully";
             header('location:' . ROOT_URL . 'admin/');
             die();
