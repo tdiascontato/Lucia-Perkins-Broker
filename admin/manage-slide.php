@@ -1,4 +1,5 @@
-<?php 
+<?php
+        
     include 'partials/header.php'; 
     $current_admin_id = $_SESSION['user-id'];//fetch users from db but not current user
     $query = "SELECT * FROM slider";
