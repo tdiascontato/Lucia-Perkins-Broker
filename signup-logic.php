@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'config/database.php';
 //Pegando o formulário | Quando submitado
 if(isset($_POST['submit'])){
