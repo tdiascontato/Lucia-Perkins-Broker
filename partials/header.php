@@ -27,8 +27,8 @@
         <div class="container nav__container">
             <a href="<?=ROOT_URL?>" class="nav__logo">Corretor Name</a> 
             <ul class="nav__items">
-                <li><a href="<?=ROOT_URL?>blog.php">Catálogo</a></li>
-                <li><a href="<?=ROOT_URL?>contact.php">Contacts</a></li>
+                <li><a href="<?=ROOT_URL?>blog.php">Imóveis</a></li>
+                <li><a href="<?=ROOT_URL?>contact.php">Contatos</a></li>
                 <?php if(isset($_SESSION['user-id'])): ?>
                     <li class="nav__profile">
                         <div class="avatar">
