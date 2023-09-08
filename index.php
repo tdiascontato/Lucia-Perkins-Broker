@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'partials/header.php';
 $featured_query = "SELECT * FROM posts WHERE is_featured=1";
 $query_two = "SELECT thumbnail_slider FROM slider";
