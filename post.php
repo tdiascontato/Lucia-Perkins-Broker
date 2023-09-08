@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include 'partials/header.php'; 
 //fetch post from db if id is set
 if(isset($_GET['id'])){
