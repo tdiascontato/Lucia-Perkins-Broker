@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'config/database.php';
 //clicou?
 if(isset($_POST['submit'])){
