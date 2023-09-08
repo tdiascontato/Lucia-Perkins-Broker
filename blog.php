@@ -1,4 +1,5 @@
 <?php
+session_start();
  include 'partials/header.php'; 
   //fetch all posts from posts table
   $query = "SELECT * FROM posts ORDER BY date_time DESC";
