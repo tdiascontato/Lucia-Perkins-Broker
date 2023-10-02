@@ -1,6 +1,7 @@
 # corretor
-Site para Corretores Imobiliários.
-![image](https://github.com/tdiascontato/corretor/assets/98658691/e15fba5a-093b-4b97-be58-81098e5100d6)
+Modelo de site para Corretores Imobiliários feito para Lúcia Perkins Dias.
+![image](https://github.com/tdiascontato/Lucia-Perkins-Broker/assets/98658691/d13541a9-d5ad-49c4-a886-0bf1f347baf3)
+
 
 Sistema de Gerenciamento Imobiliário
 O Sistema de Gerenciamento Imobiliário é uma aplicação web desenvolvida em PHP e MySQL que permite aos corretores imobiliários gerenciar propriedades, clientes e transações de forma eficiente. A aplicação oferece operações CRUD completas (Create, Read, Update, Delete) e uma interface de dashboard intuitiva para facilitar o acompanhamento das atividades.
@@ -39,4 +40,6 @@ Acesse a aplicação em seu navegador e faça login com as credenciais padrão.
 
 Capturas de Tela:
 
-![image](https://github.com/tdiascontato/corretor/assets/98658691/e0a0d43c-aa66-4844-b99d-7e8e0b76c28c)
+![image](https://github.com/tdiascontato/Lucia-Perkins-Broker/assets/98658691/e53a9089-29ff-452f-8dc9-3fb1f738bfac)
+
+
