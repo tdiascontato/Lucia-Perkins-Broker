@@ -29,7 +29,7 @@ Clone este repositório em seu servidor web:
 
 bash
 Copy code
-git clone https://github.com/seu-usuario/sistema-imobiliario.git
+git clone https://github.com/tdiascontato/Lucia-Perkins-Broker.git
 Crie um banco de dados MySQL para a aplicação.
 
 Importe o arquivo SQL fornecido na pasta database para criar as tabelas necessárias.
